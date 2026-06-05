@@ -1,6 +1,6 @@
 const WEBHOOK_GENERATE_URL = "PASTE_N8N_GENERATE_WEBHOOK_URL_HERE";
-const WEBHOOK_LEAD_URL = "https://n8n.srv1419508.hstgr.cloud/webhook-test/fae470e8-8e74-48d2-a849-4d27956cb5a8";
-const ROADMAP_PAYMENT_URL = "PASTE_STRIPE_PAYMENT_LINK_HERE";
+const WEBHOOK_LEAD_URL = "http://n8n.pierreaboukrat.com/webhook-test/a43b0c96-6dfe-45c3-88e3-915d5aed3db0";
+const ROADMAP_PAYMENT_URL = "https://buy.stripe.com/test_9B6dRa0xP8DRfAh4z41Nu00";
 const LOCAL_SIDE_PROJECTS_DATA = {
   bricoleur: {
     get: [
