@@ -1593,3 +1593,46 @@ body {
     width: 120px;
   }
 }
+.beta-box {
+  max-width: 680px;
+  margin: 32px auto 0;
+  padding: 18px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.86);
+  text-align: center;
+}
+
+.beta-badge {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #FF6700;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.beta-box p {
+  margin: 0 0 14px;
+  line-height: 1.5;
+}
+
+.beta-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #106BF4;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.beta-link:hover {
+  color: #fff;
+  transform: translateY(-1px);
+}
