@@ -1775,3 +1775,11 @@ body {
     max-width: 100%;
   }
 }
+.paid-service-note {
+  max-width: 520px;
+  margin: 12px auto 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  text-align: center;
+}
