@@ -764,13 +764,32 @@ if (betaSignupForm) {
       return;
     }
 
-    console.log("Inscription bêta :", {
-      email,
-      consent,
-      source: "homepage-beta-list"
-    });
+    try {
+  betaFormMessage.textContent = "Envoi en cours...";
 
-    betaFormMessage.textContent = "Merci, votre inscription est bien prise en compte.";
-    betaSignupForm.reset();
+  const response = await fetch(BETA_WEBHOOK_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      email: email,
+      consent_email_storage: consent,
+      source: "homepage-beta-list",
+      type_demande: "inscription_version_finale",
+      created_at: new Date().toISOString()
+    })
   });
+
+  if (!response.ok) {
+    throw new Error("Erreur webhook");
+  }
+
+  betaFormMessage.textContent = "Merci, votre inscription est bien prise en compte.";
+  betaSignupForm.reset();
+
+} catch (error) {
+  console.error(error);
+  betaFormMessage.textContent = "L’inscription n’a pas fonctionné. Réessayez dans quelques instants.";
 }
+const BETA_WEBHOOK_URL = "http://n8n.pierreaboukrat.com/webhook-test/a43b0c96-6dfe-45c3-88e3-915d5aed3db0";
