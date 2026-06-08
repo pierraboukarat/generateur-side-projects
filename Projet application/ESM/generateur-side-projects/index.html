@@ -21,6 +21,46 @@
     />
     <link rel="stylesheet" href="css/style.css" />
   </head>
+  <div class="beta-modal" id="betaModal" aria-hidden="true">
+  <div class="beta-modal-overlay" id="closeBetaModalOverlay"></div>
+
+  <div class="beta-modal-card" role="dialog" aria-modal="true" aria-labelledby="betaModalTitle">
+    <button class="beta-modal-close" id="closeBetaModal" type="button" aria-label="Fermer">
+      ×
+    </button>
+
+    <h2 id="betaModalTitle">
+      Recevoir la version finale du générateur En Sous-Marin
+    </h2>
+
+    <p class="beta-modal-intro">
+      Le générateur est actuellement en bêta. Laissez votre email pour être prévenu lorsque la version finale sera disponible.
+    </p>
+
+    <form id="betaSignupForm" class="beta-modal-form">
+      <label for="betaEmail">Adresse mail*</label>
+
+      <input
+        id="betaEmail"
+        name="email"
+        type="email"
+        placeholder="prénom.nom@gmail.com"
+        required
+      />
+
+      <label class="beta-checkbox">
+        <input type="checkbox" id="betaConsent" required />
+        <span>J’accepte que mon adresse mail soit conservée</span>
+      </label>
+
+      <button type="submit" class="beta-submit">
+        M’inscrire
+      </button>
+
+      <p class="beta-form-message" id="betaFormMessage"></p>
+    </form>
+  </div>
+</div>
   <body class="home-page">
         <img 
       src="assets/Plan de travail 1 copie 9.png" 
@@ -82,6 +122,7 @@
   M’inscrire sur la liste
 </button>
 </div>
+        
 
         <section class="choice-block" aria-labelledby="category-title">
           <h2 id="category-title" class="title is-4 choice-title">
