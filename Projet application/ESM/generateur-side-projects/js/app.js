@@ -721,3 +721,56 @@ if (leadModalClose) {
 if (leadModalOverlay) {
   leadModalOverlay.addEventListener("click", closeLeadModal);
 }
+const betaModal = document.getElementById("betaModal");
+const openBetaModal = document.getElementById("openBetaModal");
+const closeBetaModal = document.getElementById("closeBetaModal");
+const closeBetaModalOverlay = document.getElementById("closeBetaModalOverlay");
+const betaSignupForm = document.getElementById("betaSignupForm");
+const betaFormMessage = document.getElementById("betaFormMessage");
+
+function openBetaSignupModal() {
+  if (!betaModal) return;
+  betaModal.classList.add("is-open");
+  betaModal.setAttribute("aria-hidden", "false");
+}
+
+function closeBetaSignupModal() {
+  if (!betaModal) return;
+  betaModal.classList.remove("is-open");
+  betaModal.setAttribute("aria-hidden", "true");
+}
+
+if (openBetaModal) {
+  openBetaModal.addEventListener("click", openBetaSignupModal);
+}
+
+if (closeBetaModal) {
+  closeBetaModal.addEventListener("click", closeBetaSignupModal);
+}
+
+if (closeBetaModalOverlay) {
+  closeBetaModalOverlay.addEventListener("click", closeBetaSignupModal);
+}
+
+if (betaSignupForm) {
+  betaSignupForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const email = document.getElementById("betaEmail").value;
+    const consent = document.getElementById("betaConsent").checked;
+
+    if (!email || !consent) {
+      betaFormMessage.textContent = "Merci de renseigner votre email et d’accepter la conservation de l’adresse.";
+      return;
+    }
+
+    console.log("Inscription bêta :", {
+      email,
+      consent,
+      source: "homepage-beta-list"
+    });
+
+    betaFormMessage.textContent = "Merci, votre inscription est bien prise en compte.";
+    betaSignupForm.reset();
+  });
+}
