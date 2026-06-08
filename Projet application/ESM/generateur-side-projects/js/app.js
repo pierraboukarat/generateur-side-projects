@@ -1,6 +1,7 @@
 const WEBHOOK_GENERATE_URL = "";
 const WEBHOOK_LEAD_URL = "https://n8n.pierreaboukrat.com/webhook-test/a43b0c96-6dfe-45c3-88e3-915d5aed3db0";
 const ROADMAP_PAYMENT_URL = "https://calendly.com/pierre-aboukrat/30min";
+const BETA_WEBHOOK_URL = "https://n8n.pierreaboukrat.com/webhook/a43b0c96-6dfe-45c3-88e3-915d5aed3db0";
 const LOCAL_SIDE_PROJECTS_DATA = {
   bricoleur: {
     get: [
@@ -752,44 +753,83 @@ if (closeBetaModalOverlay) {
   closeBetaModalOverlay.addEventListener("click", closeBetaSignupModal);
 }
 
-if (betaSignupForm) {
-  betaSignupForm.addEventListener("submit", function (event) {
-    event.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
+  const BETA_WEBHOOK_URL = "https://n8n.pierreaboukrat.com/webhook/a43b0c96-6dfe-45c3-88e3-915d5aed3db0";
 
-    const email = document.getElementById("betaEmail").value;
-    const consent = document.getElementById("betaConsent").checked;
+  const betaModal = document.getElementById("betaModal");
+  const openBetaModal = document.getElementById("openBetaModal");
+  const closeBetaModal = document.getElementById("closeBetaModal");
+  const closeBetaModalOverlay = document.getElementById("closeBetaModalOverlay");
+  const betaSignupForm = document.getElementById("betaSignupForm");
+  const betaFormMessage = document.getElementById("betaFormMessage");
 
-    if (!email || !consent) {
-      betaFormMessage.textContent = "Merci de renseigner votre email et d’accepter la conservation de l’adresse.";
-      return;
-    }
-
-    try {
-  betaFormMessage.textContent = "Envoi en cours...";
-
-  const response = await fetch(BETA_WEBHOOK_URL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      email: email,
-      consent_email_storage: consent,
-      source: "homepage-beta-list",
-      type_demande: "inscription_version_finale",
-      created_at: new Date().toISOString()
-    })
-  });
-
-  if (!response.ok) {
-    throw new Error("Erreur webhook");
+  function openBetaSignupModal() {
+    if (!betaModal) return;
+    betaModal.classList.add("is-open");
+    betaModal.setAttribute("aria-hidden", "false");
   }
 
-  betaFormMessage.textContent = "Merci, votre inscription est bien prise en compte.";
-  betaSignupForm.reset();
+  function closeBetaSignupModal() {
+    if (!betaModal) return;
+    betaModal.classList.remove("is-open");
+    betaModal.setAttribute("aria-hidden", "true");
+  }
 
-} catch (error) {
-  console.error(error);
-  betaFormMessage.textContent = "L’inscription n’a pas fonctionné. Réessayez dans quelques instants.";
-}
-const BETA_WEBHOOK_URL = "http://n8n.pierreaboukrat.com/webhook-test/a43b0c96-6dfe-45c3-88e3-915d5aed3db0";
+  if (openBetaModal) {
+    openBetaModal.addEventListener("click", openBetaSignupModal);
+  }
+
+  if (closeBetaModal) {
+    closeBetaModal.addEventListener("click", closeBetaSignupModal);
+  }
+
+  if (closeBetaModalOverlay) {
+    closeBetaModalOverlay.addEventListener("click", closeBetaSignupModal);
+  }
+
+  if (betaSignupForm) {
+    betaSignupForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const emailInput = document.getElementById("betaEmail");
+      const consentInput = document.getElementById("betaConsent");
+
+      const email = emailInput ? emailInput.value.trim() : "";
+      const consent = consentInput ? consentInput.checked : false;
+
+      if (!email || !consent) {
+        betaFormMessage.textContent = "Merci de renseigner votre email et d’accepter la conservation de l’adresse.";
+        return;
+      }
+
+      try {
+        betaFormMessage.textContent = "Envoi en cours...";
+
+        const response = await fetch(BETA_WEBHOOK_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            email: email,
+            consent_email_storage: consent,
+            source: "homepage-beta-list",
+            type_demande: "inscription_version_finale",
+            created_at: new Date().toISOString()
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error("Erreur webhook");
+        }
+
+        betaFormMessage.textContent = "Merci, votre inscription est bien prise en compte.";
+        betaSignupForm.reset();
+
+      } catch (error) {
+        console.error(error);
+        betaFormMessage.textContent = "L’inscription n’a pas fonctionné. Réessayez dans quelques instants.";
+      }
+    });
+  }
+});
