@@ -1636,3 +1636,142 @@ body {
   color: #fff;
   transform: translateY(-1px);
 }
+.beta-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+.beta-modal.is-open {
+  display: flex;
+}
+
+.beta-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.68);
+  backdrop-filter: blur(4px);
+}
+
+.beta-modal-card {
+  position: relative;
+  width: min(920px, calc(100vw - 48px));
+  padding: 42px;
+  border-radius: 28px;
+  background: #0B0824;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 
+    -18px -18px 0 #106BF4,
+    18px 18px 0 #FF1010,
+    -32px 18px 0 #12B800;
+}
+
+.beta-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 34px;
+  cursor: pointer;
+}
+
+.beta-modal-card h2 {
+  margin: 0 0 18px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  font-weight: 900;
+}
+
+.beta-modal-intro {
+  max-width: 720px;
+  margin: 0 0 32px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.beta-modal-form {
+  display: grid;
+  gap: 22px;
+}
+
+.beta-modal-form label {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.beta-modal-form input[type="email"] {
+  width: 100%;
+  max-width: 560px;
+  padding: 18px 22px;
+  border-radius: 18px;
+  border: 2px solid #8EE7F0;
+  background: transparent;
+  color: #fff;
+  font-size: 1.15rem;
+  outline: none;
+}
+
+.beta-modal-form input[type="email"]::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+  font-style: italic;
+}
+
+.beta-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 1rem;
+}
+
+.beta-checkbox input {
+  width: 24px;
+  height: 24px;
+  accent-color: #106BF4;
+}
+
+.beta-submit {
+  width: fit-content;
+  padding: 14px 26px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #106BF4, #FF6700);
+  color: #fff;
+  font-weight: 900;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.beta-form-message {
+  min-height: 20px;
+  margin: 0;
+  color: #8EE7F0;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+  .beta-modal {
+    padding: 20px;
+  }
+
+  .beta-modal-card {
+    padding: 32px 24px;
+    box-shadow: 
+      -8px -8px 0 #106BF4,
+      8px 8px 0 #FF1010,
+      -14px 8px 0 #12B800;
+  }
+
+  .beta-modal-form input[type="email"] {
+    max-width: 100%;
+  }
+}
