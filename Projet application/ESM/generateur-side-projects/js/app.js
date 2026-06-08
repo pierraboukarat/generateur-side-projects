@@ -753,8 +753,6 @@ if (closeBetaModalOverlay) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  fetch(WEBHOOK_LEAD_URL, {
-
   const betaModal = document.getElementById("betaModal");
   const openBetaModal = document.getElementById("openBetaModal");
   const closeBetaModal = document.getElementById("closeBetaModal");
@@ -804,7 +802,7 @@ document.addEventListener("DOMContentLoaded", function () {
       try {
         betaFormMessage.textContent = "Envoi en cours...";
 
-        const response = await fetch(BETA_WEBHOOK_URL, {
+        const response = await fetch(WEBHOOK_LEAD_URL, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
