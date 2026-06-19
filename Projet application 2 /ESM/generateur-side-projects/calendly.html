@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Réserver un échange - En Sous-Marin</title>
+    <meta
+      name="description"
+      content="Réservez un échange de 30 minutes pour découvrir le cahier des charges En Sous-Marin, un service à 59 € TTC pour cadrer une idée de Side Project."
+    />
+    <link rel="icon" type="image/png" href="favicon-96x96.png?v=2" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2" />
+    <link rel="shortcut icon" href="favicon.ico?v=2" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2" />
+    <link rel="manifest" href="site.webmanifest?v=2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="calendly-page">
+    <a class="generator-logo" href="index.html" aria-label="En Sous-Marin">
+      <img src="assets/Plan de travail 1 copie 9.png" alt="En Sous-Marin" />
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Ouvrir le menu"
+      aria-controls="sideMenu"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <aside id="sideMenu" class="side-menu" aria-hidden="true">
+      <div class="side-menu-top">
+        <a class="side-menu-logo" href="index.html" aria-label="En Sous-Marin">
+          <img src="assets/Plan de travail 1 copie 9.png" alt="En Sous-Marin" />
+        </a>
+        <button class="menu-close" type="button" aria-label="Fermer le menu">
+          <span aria-hidden="true">X</span> Fermer
+        </button>
+      </div>
+
+      <nav class="side-menu-nav" aria-label="Pages">
+        <p class="side-menu-label"><span></span> Pages</p>
+        <a href="a-propos.html" class="side-menu-link">À propos</a>
+        <a href="mentions-legales.html" class="side-menu-link">Mention légale</a>
+        <a href="contact.html" class="side-menu-link">Contact</a>
+        <a href="calendly.html" class="side-menu-link">Réserver un échange</a>
+      </nav>
+    </aside>
+    <button class="menu-scrim" type="button" aria-label="Fermer le menu"></button>
+
+    <main>
+      <!-- Premier fold : la prise de rendez-vous reste sous cette hero. -->
+      <section class="calendly-hero" aria-labelledby="calendlyHeroTitle">
+        <div class="container calendly-hero-container">
+          <div class="calendly-hero-card">
+            <p class="content-badge calendly-badge">Cahier des charges Side Project</p>
+            <h1 id="calendlyHeroTitle" class="title calendly-title">
+              Réserver un échange de 30 minutes
+            </h1>
+            <p class="calendly-lead">
+              Cet échange permet de présenter la structure du cahier des charges En Sous-Marin et de
+              voir comment il peut aider à cadrer une idée de Side Project avant de passer à l’action.
+            </p>
+            <p class="calendly-copy">
+              Le cahier des charges sert à transformer une idée en document clair : cible, promesse,
+              première offre, contenus à produire, fonctionnalités utiles et premières actions à
+              lancer.
+            </p>
+            <p class="calendly-price">
+              La création du cahier des charges est un service payant : <strong>59 € TTC</strong>.
+            </p>
+            <a class="button calendly-primary-button" href="#calendly-widget">
+              Choisir un créneau
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="calendly-widget" class="section calendly-widget-section" aria-labelledby="calendlyWidgetTitle">
+        <div class="container">
+          <div class="calendly-widget-heading">
+            <p class="content-badge">Calendly</p>
+            <h2 id="calendlyWidgetTitle">Choisir un créneau</h2>
+          </div>
+
+          <!-- Calendly inline widget begin -->
+          <div class="calendly-inline-widget" data-url="https://calendly.com/pierre-aboukrat/30min" style="min-width:320px;height:700px;"></div>
+          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+          <!-- Calendly inline widget end -->
+        </div>
+      </section>
+    </main>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

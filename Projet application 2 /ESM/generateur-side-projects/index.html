@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Générateur de Side Projects - En Sous-Marin</title>
+    <link rel="icon" type="image/png" href="favicon-96x96.png?v=2" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2" />
+    <link rel="shortcut icon" href="favicon.ico?v=2" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2" />
+    <link rel="manifest" href="site.webmanifest?v=2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="home-page">
+        <img 
+      src="assets/Plan de travail 1 copie 9.png" 
+      alt="Logo En Sous-Marin" 
+      class="esm-logo"
+    />
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Ouvrir le menu"
+      aria-controls="sideMenu"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <aside id="sideMenu" class="side-menu" aria-hidden="true">
+      <div class="side-menu-top">
+        <a class="side-menu-logo" href="index.html" aria-label="En Sous-Marin">
+          <img src="assets/Plan de travail 1 copie 11.png" alt="En Sous-Marin" />
+        </a>
+        <button class="menu-close" type="button" aria-label="Fermer le menu">
+          <span aria-hidden="true">X</span> Fermer
+        </button>
+      </div>
+
+
+
+      <nav class="side-menu-nav" aria-label="Pages">
+        <p class="side-menu-label"><span></span> Pages</p>
+        <a href="a-propos.html" class="side-menu-link">À propos</a>
+        <a href="mentions-legales.html" class="side-menu-link">Mention légale</a>
+        <a href="contact.html" class="side-menu-link">Contact</a>
+        <a href="calendly.html" class="side-menu-link">Réserver un échange</a>
+      </nav>
+    </aside>
+    <button class="menu-scrim" type="button" aria-label="Fermer le menu"></button>
+
+    <main class="section app-section home-section">
+      <div class="container app-container home-container">
+        <section class="intro-block home-intro">
+          <p class="home-badge">Le générateur d'idées</p>
+
+          <h1 class="title is-1 app-title">
+            Évaluez votre idée de Side Project
+            avant de vous lancer.
+          </h1>
+          <p class="subtitle is-4 app-subtitle home-subtitle">
+            Cet outil génère une piste de Side Project modifiable à souhait : une cible, une promesse et une première action pour commencer à tester une idée.
+          </p>
+        </section>
+
+        <section class="choice-block" aria-labelledby="category-title">
+          <h2 id="category-title" class="title is-4 choice-title">
+            Je suis plutôt...
+          </h2>
+
+          <div class="category-grid">
+            <div class="category-item">
+              <a class="category-card category-bricoleur" href="generateur.html?categorie=bricoleur">
+                <span class="category-title">Bricoleur</span>
+              </a>
+            </div>
+            <div class="category-item">
+              <a class="category-card category-mode" href="generateur.html?categorie=mode">
+                <span class="category-title">Mode</span>
+              </a>
+            </div>
+            <div class="category-item">
+              <a class="category-card category-newsletter" href="generateur.html?categorie=newsletter">
+                <span class="category-title">Newsletter</span>
+              </a>
+            </div>
+            <div class="category-item">
+              <a class="category-card category-club" href="generateur.html?categorie=club">
+                <span class="category-title">Club</span>
+              </a>
+            </div>
+            <div class="category-item">
+              <a class="category-card category-restauration" href="generateur.html?categorie=restauration">
+                <span class="category-title">Restauration</span>
+              </a>
+            </div>
+            <div class="category-item">
+              <a class="category-card category-photographie" href="generateur.html?categorie=photographie">
+                <span class="category-title">Photographie</span>
+              </a>
+            </div>
+            <div class="category-item">
+              <a class="category-card category-digital" href="generateur.html?categorie=jeuxdesociété">
+                <span class="category-title">Jeux de société</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <p class="home-signature">© 2026 En Sous-Marin. Tous droits réservés</p>
+      </div>
+    </main>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
